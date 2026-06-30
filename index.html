@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شاہدزادہ اسلامک پورٹل | دنیا و آخرت کی کامیابی کے اعمال</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Amiri:wght@400;700&family=Jameel+Noori+Nastaleeq&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Lateef:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0c1f1a;
+    --emerald:#123b30;
+    --emerald-deep:#0a2620;
+    --gold:#cda04e;
+    --gold-light:#e8c98a;
+    --rose:#c97b8a;
+    --rose-soft:#e6b9c2;
+    --cream:#f7efe2;
+    --paper:#fbf6ec;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Noto Nastaliq Urdu','Lateef',serif;
+    line-height:2;
+    overflow-x:hidden;
+  }
+  .latin{font-family:'Cormorant Garamond', serif; letter-spacing:.04em;}
+
+  /* ===== Lattice background ===== */
+  .lattice-bg{
+    position:fixed; inset:0; z-index:0; opacity:.06; pointer-events:none;
+    background-image:
+      repeating-linear-gradient(45deg, var(--gold) 0 1px, transparent 1px 60px),
+      repeating-linear-gradient(-45deg, var(--gold) 0 1px, transparent 1px 60px);
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  section{position:relative; z-index:1; padding:90px 6vw;}
+
+  /* ===== Nav ===== */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 6vw;
+    background:rgba(10,38,32,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(205,160,78,.25);
+  }
+  .brand{font-size:1.5rem; color:var(--gold-light); font-weight:700;}
+  .navlinks{display:flex; gap:28px; font-size:1.05rem;}
+  .navlinks a{opacity:.85; transition:opacity .25s, color .25s;}
+  .navlinks a:hover{opacity:1; color:var(--gold-light);}
+  .navlinks{display:none;}
+  @media(min-width:880px){.navlinks{display:flex;}}
+  .menu-btn{display:block; background:none; border:1px solid var(--gold); color:var(--gold-light); padding:8px 14px; border-radius:4px; font-family:'Cormorant Garamond',serif; cursor:pointer;}
+  @media(min-width:880px){.menu-btn{display:none;}}
+  .mobile-menu{
+    position:fixed; top:64px; left:0; right:0; z-index:49;
+    background:var(--emerald-deep); border-bottom:1px solid var(--gold);
+    display:flex; flex-direction:column; padding:18px 6vw; gap:16px;
+    transform:translateY(-130%); transition:transform .35s ease;
+  }
+  .mobile-menu.open{transform:translateY(0);}
+
+  /* ===== Hero ===== */
+  .hero{
+    min-height:100vh; display:flex; align-items:center;
+    padding-top:140px;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(205,160,78,.18), transparent 55%),
+      radial-gradient(circle at 10% 90%, rgba(201,123,138,.15), transparent 50%),
+      linear-gradient(180deg, var(--ink), var(--emerald-deep));
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .hero-text{flex:1 1 420px;}
+  .eyebrow{
+    font-family:'Cormorant Garamond',serif; color:var(--rose-soft);
+    text-transform:uppercase; letter-spacing:.35em; font-size:.8rem;
+    margin-bottom:18px; display:inline-block; border-bottom:1px solid var(--rose-soft); padding-bottom:6px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.5vw, 4.2rem);
+    color:var(--gold-light);
+    line-height:1.7;
+    margin-bottom:22px;
+    text-shadow:0 2px 30px rgba(205,160,78,.25);
+  }
+  .hero p{font-size:1.25rem; color:var(--rose-soft); max-width:560px; margin-bottom:30px;}
+  .cta-row{display:flex; gap:18px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:14px 32px; border-radius:3px;
+    font-family:'Cormorant Garamond',serif; font-size:1.15rem; letter-spacing:.03em;
+    transition:transform .25s, box-shadow .25s;
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--ink); font-weight:700;}
+  .btn-gold:hover{transform:translateY(-3px); box-shadow:0 10px 30px rgba(205,160,78,.35);}
+  .btn-outline{border:1px solid var(--rose-soft); color:var(--rose-soft);}
+  .btn-outline:hover{background:rgba(230,185,194,.08); transform:translateY(-3px);}
+
+  .hero-portrait{
+    flex:0 1 320px; position:relative;
+  }
+  .portrait-frame{
+    position:relative; border-radius:6px; overflow:hidden;
+    border:1px solid var(--gold);
+    box-shadow:0 30px 80px rgba(0,0,0,.5), 0 0 0 8px rgba(205,160,78,.08);
+  }
+  .portrait-frame img{width:100%; height:auto; display:block; filter:saturate(1.05) contrast(1.03);}
+  .portrait-caption{
+    text-align:center; margin-top:18px; font-family:'Cormorant Garamond',serif;
+  }
+  .portrait-caption .name{font-size:1.4rem; color:var(--gold-light); letter-spacing:.06em;}
+  .portrait-caption .role{font-size:.95rem; color:var(--rose-soft); letter-spacing:.12em; text-transform:uppercase;}
+
+  /* divider */
+  .divider{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    margin:0 auto; padding:50px 0 10px; max-width:300px;
+  }
+  .divider .line{flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent);}
+  .divider .star{color:var(--gold); font-size:1.1rem;}
+
+  .section-title{
+    text-align:center; color:var(--gold-light); font-size:clamp(1.8rem,3.5vw,2.6rem);
+    margin-bottom:10px;
+  }
+  .section-sub{
+    text-align:center; color:var(--rose-soft); font-family:'Cormorant Garamond',serif;
+    letter-spacing:.15em; text-transform:uppercase; font-size:.85rem; margin-bottom:50px;
+  }
+
+  /* ===== Daily ayah strip ===== */
+  .ayah-strip{
+    background:linear-gradient(135deg, var(--emerald), var(--emerald-deep));
+    border-top:1px solid rgba(205,160,78,.3); border-bottom:1px solid rgba(205,160,78,.3);
+    text-align:center; padding:60px 6vw;
+  }
+  .ayah-strip .arabic{font-family:'Amiri',serif; font-size:clamp(1.6rem,3vw,2.4rem); color:var(--gold-light); margin-bottom:18px; line-height:2.2;}
+  .ayah-strip .meaning{color:var(--rose-soft); font-size:1.1rem; max-width:700px; margin:0 auto;}
+  .ayah-strip .ref{margin-top:14px; font-family:'Cormorant Garamond',serif; color:var(--gold); font-size:.95rem; letter-spacing:.1em;}
+
+  /* ===== Cards grid (success deeds) ===== */
+  .grid{display:grid; gap:26px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+  .card{
+    background:rgba(247,239,226,.04); border:1px solid rgba(205,160,78,.25); border-radius:8px;
+    padding:32px 26px; transition:transform .3s, border-color .3s, background .3s;
+  }
+  .card:hover{transform:translateY(-6px); border-color:var(--gold); background:rgba(247,239,226,.07);}
+  .card .icon{
+    width:50px; height:50px; border:1px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; color:var(--gold-light); font-size:1.3rem;
+    margin-bottom:18px;
+  }
+  .card h3{color:var(--gold-light); font-size:1.35rem; margin-bottom:12px;}
+  .card p{color:var(--cream); opacity:.85; font-size:1.02rem;}
+
+  /* ===== Asma ul Husna ===== */
+  .asma-wrap{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px;
+  }
+  .asma-card{
+    background:radial-gradient(circle at 30% 20%, rgba(205,160,78,.12), rgba(247,239,226,.03));
+    border:1px solid rgba(205,160,78,.2); border-radius:8px; text-align:center; padding:20px 10px;
+    transition:transform .25s, border-color .25s;
+  }
+  .asma-card:hover{transform:scale(1.05); border-color:var(--rose-soft);}
+  .asma-card .ar{font-family:'Amiri',serif; font-size:1.5rem; color:var(--gold-light); margin-bottom:6px;}
+  .asma-card .ur{font-size:1rem; color:var(--rose-soft);}
+  .show-more-wrap{text-align:center; margin-top:34px;}
+
+  /* ===== Names of Prophet ===== */
+  .pill-wrap{display:flex; flex-wrap:wrap; gap:12px; justify-content:center;}
+  .pill{
+    border:1px solid var(--rose-soft); color:var(--rose-soft);
+    padding:10px 22px; border-radius:30px; font-family:'Amiri',serif; font-size:1.15rem;
+    transition:background .25s, color .25s;
+  }
+  .pill:hover{background:var(--rose-soft); color:var(--ink);}
+
+  /* ===== Rabbana 40 - accordion ===== */
+  .rabbana-list{max-width:840px; margin:0 auto; display:flex; flex-direction:column; gap:12px;}
+  .rabbana-item{
+    border:1px solid rgba(205,160,78,.25); border-radius:6px; overflow:hidden;
+    background:rgba(247,239,226,.03);
+  }
+  .rabbana-q{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:18px 24px; cursor:pointer; color:var(--gold-light); font-size:1.1rem;
+  }
+  .rabbana-q .num{color:var(--rose-soft); font-family:'Cormorant Garamond',serif; font-size:1rem; margin-left:10px;}
+  .rabbana-q .chevron{transition:transform .3s; color:var(--gold);}
+  .rabbana-item.open .chevron{transform:rotate(180deg);}
+  .rabbana-a{
+    max-height:0; overflow:hidden; transition:max-height .4s ease, padding .4s ease;
+    padding:0 24px;
+  }
+  .rabbana-item.open .rabbana-a{max-height:260px; padding:0 24px 22px;}
+  .rabbana-a .arabic{font-family:'Amiri',serif; font-size:1.3rem; color:var(--gold-light); margin-bottom:10px; line-height:2.1;}
+  .rabbana-a .ur{color:var(--cream); opacity:.85;}
+
+  /* ===== Timeline (history) ===== */
+  .timeline{max-width:780px; margin:0 auto; position:relative; padding-right:30px;}
+  .timeline::before{
+    content:""; position:absolute; right:6px; top:0; bottom:0; width:2px;
+    background:linear-gradient(180deg, var(--gold), var(--rose-soft));
+  }
+  .t-item{position:relative; padding-bottom:46px;}
+  .t-item::before{
+    content:""; position:absolute; right:-2px; top:6px; width:14px; height:14px;
+    background:var(--gold); border-radius:50%; box-shadow:0 0 0 4px rgba(205,160,78,.2);
+  }
+  .t-item .year{color:var(--rose-soft); font-family:'Cormorant Garamond',serif; letter-spacing:.1em; font-size:.95rem; margin-bottom:6px;}
+  .t-item h4{color:var(--gold-light); font-size:1.3rem; margin-bottom:8px;}
+  .t-item p{color:var(--cream); opacity:.85;}
+
+  /* ===== Motivation quotes carousel-ish ===== */
+  .quote-strip{
+    display:flex; gap:24px; overflow-x:auto; padding-bottom:20px; scroll-snap-type:x mandatory;
+  }
+  .quote-card{
+    flex:0 0 320px; scroll-snap-align:start;
+    background:linear-gradient(160deg, rgba(201,123,138,.1), rgba(205,160,78,.07));
+    border:1px solid var(--rose-soft); border-radius:10px; padding:34px 28px;
+  }
+  .quote-card .mark{font-size:2.5rem; color:var(--gold); font-family:'Cormorant Garamond',serif; line-height:1;}
+  .quote-card p{color:var(--cream); font-size:1.15rem; margin:14px 0 18px;}
+  .quote-card .by{color:var(--rose-soft); font-family:'Cormorant Garamond',serif; font-size:.95rem;}
+
+  /* ===== Consultation booking ===== */
+  .consult-wrap{
+    display:grid; grid-template-columns:1fr; gap:40px; max-width:1000px; margin:0 auto;
+  }
+  @media(min-width:880px){.consult-wrap{grid-template-columns:1fr 1fr;}}
+  .consult-info{
+    background:linear-gradient(160deg, var(--emerald), var(--emerald-deep));
+    border:1px solid var(--gold); border-radius:10px; padding:40px 34px;
+  }
+  .consult-info h3{color:var(--gold-light); font-size:1.6rem; margin-bottom:16px;}
+  .consult-info p{color:var(--cream); opacity:.85; margin-bottom:24px;}
+  .contact-row{display:flex; align-items:center; gap:14px; margin-bottom:16px; font-family:'Cormorant Garamond',serif;}
+  .contact-row .lbl{color:var(--rose-soft); font-size:.95rem; letter-spacing:.08em; min-width:90px;}
+  .contact-row .val{color:var(--gold-light); font-size:1.2rem; direction:ltr; unicode-bidi:bidi-override; display:inline-block; text-align:left;}
+  .price-tag{
+    margin-top:26px; padding:18px 22px; border:1px dashed var(--rose-soft); border-radius:8px;
+    color:var(--rose-soft); font-family:'Cormorant Garamond',serif; font-size:1.05rem;
+  }
+
+  .booking-form{
+    background:rgba(247,239,226,.04); border:1px solid rgba(205,160,78,.25); border-radius:10px;
+    padding:40px 34px; display:flex; flex-direction:column; gap:18px;
+  }
+  .booking-form label{color:var(--rose-soft); font-size:1rem; margin-bottom:6px; display:block;}
+  .booking-form input, .booking-form select, .booking-form textarea{
+    width:100%; background:rgba(0,0,0,.2); border:1px solid rgba(205,160,78,.3); border-radius:5px;
+    padding:12px 14px; color:var(--cream); font-family:'Noto Nastaliq Urdu',serif; font-size:1.05rem;
+  }
+  .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus{
+    outline:2px solid var(--gold); border-color:var(--gold);
+  }
+  .booking-form button{
+    margin-top:8px; padding:14px; border:none; border-radius:5px; cursor:pointer;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--ink);
+    font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:700;
+    transition:transform .25s;
+  }
+  .booking-form button:hover{transform:translateY(-2px);}
+  .form-note{font-size:.85rem; color:var(--rose-soft); opacity:.8;}
+
+  /* ===== Footer ===== */
+  footer{
+    text-align:center; padding:60px 6vw 40px; border-top:1px solid rgba(205,160,78,.2);
+    background:var(--emerald-deep);
+  }
+  footer .brand{margin-bottom:14px;}
+  footer .foot-links{display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-bottom:20px; font-size:.95rem; color:var(--rose-soft);}
+  footer .copyright{color:var(--cream); opacity:.5; font-family:'Cormorant Garamond',serif; font-size:.9rem;}
+
+  ::selection{background:var(--gold); color:var(--ink);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="lattice-bg"></div>
+
+<nav>
+  <div class="brand latin">شاہدزادہ <span style="color:var(--rose-soft); font-size:.9rem;">اسلامک پورٹل</span></div>
+  <div class="navlinks">
+    <a href="#deeds">اعمال</a>
+    <a href="#asma">اسماء الحسنیٰ</a>
+    <a href="#prophet-names">اسماء نبیؐ</a>
+    <a href="#rabbana">۴۰ ربنا</a>
+    <a href="#history">تاریخ</a>
+    <a href="#motivation">موٹیویشن</a>
+    <a href="#consult" style="color:var(--gold-light);">مشاورت بک کریں</a>
+  </div>
+  <button class="menu-btn" onclick="document.getElementById('mmenu').classList.toggle('open')">مینیو</button>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="#deeds">اعمال</a>
+  <a href="#asma">اسماء الحسنیٰ</a>
+  <a href="#prophet-names">اسماء نبیؐ</a>
+  <a href="#rabbana">۴۰ ربنا</a>
+  <a href="#history">تاریخ</a>
+  <a href="#motivation">موٹیویشن</a>
+  <a href="#consult" style="color:var(--gold-light);">مشاورت بک کریں</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="eyebrow latin">DUNYA · ĀKHIRAH · SUCCESS</span>
+    <h1>دنیا و آخرت کی کامیابی<br>کے اعمال، ایک ہی جگہ</h1>
+    <p>اسماء الحسنیٰ، اسماء نبی کریم ﷺ، چالیس ربنا، اسلامی تاریخ اور روزانہ کے عملی اسباق — شاہدزادہ کے ساتھ ایمان اور دنیاوی کامیابی کا سفر طے کریں۔</p>
+    <div class="cta-row">
+      <a href="#consult" class="btn btn-gold">مشاورت بک کریں</a>
+      <a href="#deeds" class="btn btn-outline">اعمال دیکھیں</a>
+    </div>
+  </div>
+  <div class="hero-portrait">
+    <div class="portrait-frame">
+      <img src="shahidzada.jpg" alt="شاہدزادہ">
+    </div>
+    <div class="portrait-caption">
+      <div class="name">شاہدزادہ</div>
+      <div class="role latin">Founder · Islamic Guide</div>
+    </div>
+  </div>
+</section>
+
+<!-- DAILY AYAH -->
+<div class="ayah-strip">
+  <div class="arabic">وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ</div>
+  <p class="meaning">جو شخص اللہ سے ڈرتا ہے، اللہ اس کے لیے نکلنے کا راستہ بنا دیتا ہے، اور اسے ایسی جگہ سے رزق دیتا ہے جہاں سے اسے گمان بھی نہیں ہوتا۔</p>
+  <div class="ref latin">— Surah At-Talaq, 65:2-3</div>
+</div>
+
+<!-- SUCCESS DEEDS -->
+<section id="deeds">
+  <h2 class="section-title">دنیا و آخرت کی کامیابی کے اعمال</h2>
+  <p class="section-sub latin">Deeds for Success in This Life & The Hereafter</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">۱</div>
+      <h3>نماز کی پابندی</h3>
+      <p>پانچ وقت کی نماز وقت پر ادا کرنا، دل کی سکون اور دن کی برکت کی بنیاد ہے۔ یہ دنیاوی نظم اور آخرت کی نجات دونوں کا ذریعہ ہے۔</p>
+    </div>
+    <div class="card">
+      <div class="icon">۲</div>
+      <h3>صبح و شام کا ذکر</h3>
+      <p>اذکارِ صباح و مساء کی پابندی انسان کو شیطانی وسوسوں سے محفوظ رکھتی ہے اور دن بھر کی مصروفیات میں سکون عطا کرتی ہے۔</p>
+    </div>
+    <div class="card">
+      <div class="icon">۳</div>
+      <h3>صدقہ اور حسنِ سلوک</h3>
+      <p>مال میں برکت اور رزق میں کشادگی کا راز صدقہ اور لوگوں کے ساتھ حسنِ سلوک میں پوشیدہ ہے۔</p>
+    </div>
+    <div class="card">
+      <div class="icon">۴</div>
+      <h3>علم اور محنت</h3>
+      <p>دینی و دنیاوی علم حاصل کرنا اور ایمانداری سے محنت کرنا، دونوں جہانوں میں کامیابی کی ضمانت ہیں۔</p>
+    </div>
+    <div class="card">
+      <div class="icon">۵</div>
+      <h3>صبر اور توکل</h3>
+      <p>مشکل وقت میں صبر اور اللہ پر بھروسہ، انسان کو ذہنی سکون اور حقیقی طاقت عطا کرتا ہے۔</p>
+    </div>
+    <div class="card">
+      <div class="icon">۶</div>
+      <h3>صلہ رحمی</h3>
+      <p>رشتہ داروں سے اچھا سلوک عمر اور رزق میں برکت کا سبب بنتا ہے، جیسا کہ احادیث میں وارد ہے۔</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="line"></div><span class="star">✦</span><div class="line"></div></div>
+
+<!-- ASMA UL HUSNA -->
+<section id="asma">
+  <h2 class="section-title">اسماء الحسنیٰ</h2>
+  <p class="section-sub latin">The 99 Beautiful Names of Allah</p>
+  <div class="asma-wrap" id="asmaGrid"></div>
+  <div class="show-more-wrap"><button class="btn btn-outline" id="asmaToggle" style="cursor:pointer; border-color:var(--gold); color:var(--gold-light); background:none; font-family:'Cormorant Garamond',serif;">مزید نام دیکھیں</button></div>
+</section>
+
+<div class="divider"><div class="line"></div><span class="star">✦</span><div class="line"></div></div>
+
+<!-- PROPHET NAMES -->
+<section id="prophet-names">
+  <h2 class="section-title">اسماء نبی کریم ﷺ</h2>
+  <p class="section-sub latin">The Blessed Names of the Prophet ﷺ</p>
+  <div class="pill-wrap" id="prophetNames"></div>
+</section>
+
+<div class="divider"><div class="line"></div><span class="star">✦</span><div class="line"></div></div>
+
+<!-- RABBANA -->
+<section id="rabbana">
+  <h2 class="section-title">۴۰ ربنا — قرآنی دعائیں</h2>
+  <p class="section-sub latin">Forty Rabbana Duas from the Qur'an</p>
+  <div class="rabbana-list" id="rabbanaList"></div>
+</section>
+
+<div class="divider"><div class="line"></div><span class="star">✦</span><div class="line"></div></div>
+
+<!-- HISTORY TIMELINE -->
+<section id="history">
+  <h2 class="section-title">حیرت انگیز اسلامی تاریخ</h2>
+  <p class="section-sub latin">Remarkable Moments in Islamic History</p>
+  <div class="timeline">
+    <div class="t-item">
+      <div class="year latin">570 AD</div>
+      <h4>ولادتِ نبی کریم ﷺ</h4>
+      <p>مکہ مکرمہ میں عام الفیل کے سال نبی کریم ﷺ کی ولادتِ باسعادت ہوئی، جو تمام جہانوں کے لیے رحمت بن کر آئے۔</p>
+    </div>
+    <div class="t-item">
+      <div class="year latin">610 AD</div>
+      <h4>غارِ حرا میں پہلی وحی</h4>
+      <p>چالیس سال کی عمر میں غارِ حرا میں جبریل امین کے ذریعے پہلی وحی "اقرا" کا نزول ہوا، اور نبوت کا آغاز ہوا۔</p>
+    </div>
+    <div class="t-item">
+      <div class="year latin">622 AD</div>
+      <h4>ہجرتِ مدینہ</h4>
+      <p>مکہ سے مدینہ کی طرف ہجرت، جس سے اسلامی کیلنڈر کا آغاز ہوا — یہ صبر، حکمت اور توکل کی عظیم مثال ہے۔</p>
+    </div>
+    <div class="t-item">
+      <div class="year latin">630 AD</div>
+      <h4>فتح مکہ</h4>
+      <p>بغیر خون خرابے کے مکہ کی فتح اور عام معافی کا اعلان، رحمت اللعالمین ﷺ کے اخلاقِ کریمانہ کی بہترین مثال ہے۔</p>
+    </div>
+    <div class="t-item">
+      <div class="year latin">632 AD</div>
+      <h4>حجۃ الوداع</h4>
+      <p>آخری خطبہ، جس میں مساوات، انسانی حقوق اور عدل کے آفاقی اصول بیان فرمائے گئے — جو آج بھی رہنما اصول ہیں۔</p>
+    </div>
+    <div class="t-item">
+      <div class="year latin">8th-13th Century</div>
+      <h4>دورِ زریں — علم کا سنہری دور</h4>
+      <p>بغداد، قرطبہ اور قاہرہ میں مسلمان سائنسدانوں نے طب، فلکیات، ریاضی اور فلسفہ میں ایسی بنیاد رکھی جس پر آج کی جدید سائنس کھڑی ہے۔</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="line"></div><span class="star">✦</span><div class="line"></div></div>
+
+<!-- MOTIVATION -->
+<section id="motivation">
+  <h2 class="section-title">روزانہ کی موٹیویشن</h2>
+  <p class="section-sub latin">Words to Carry Through Your Day</p>
+  <div class="quote-strip" id="quoteStrip"></div>
+</section>
+
+<!-- CONSULTATION -->
+<section id="consult" style="background:linear-gradient(180deg, transparent, rgba(201,123,138,.05));">
+  <h2 class="section-title">مشاورت بک کریں</h2>
+  <p class="section-sub latin">Book a Personal Consultation with Shahidzada</p>
+  <div class="consult-wrap">
+    <div class="consult-info">
+      <h3>شاہدزادہ سے براہِ راست رہنمائی</h3>
+      <p>دینی و دنیاوی مسائل، ذہنی سکون، اور زندگی کے فیصلوں میں رہنمائی کے لیے ون آن ون مشاورت کا وقت بک کریں۔</p>
+      <div class="contact-row"><span class="lbl latin">Mobile</span><a class="val" href="tel:03448144167">0344 8144167</a></div>
+      <div class="contact-row"><span class="lbl latin">Mobile</span><a class="val" href="tel:03473744995">0347 3744995</a></div>
+      <div class="contact-row"><span class="lbl latin">WhatsApp</span><a class="val" href="https://wa.me/923448144167" target="_blank" rel="noopener">0344 8144167</a></div>
+      <div class="price-tag">پہلی نشست کے بعد فیس کی تفصیل واٹس ایپ پر بھیجی جائے گی۔ بکنگ کی تصدیق فون کال کے ذریعے کی جائے گی۔</div>
+    </div>
+    <form class="booking-form" id="bookingForm">
+      <div>
+        <label for="bname">آپ کا نام</label>
+        <input type="text" id="bname" required placeholder="مکمل نام لکھیں">
+      </div>
+      <div>
+        <label for="bphone">موبائل نمبر</label>
+        <input type="tel" id="bphone" required placeholder="03xx-xxxxxxx">
+      </div>
+      <div>
+        <label for="btopic">مشاورت کا موضوع</label>
+        <select id="btopic">
+          <option>دینی رہنمائی</option>
+          <option>ذہنی سکون و پریشانی</option>
+          <option>زندگی کے فیصلے</option>
+          <option>دیگر</option>
+        </select>
+      </div>
+      <div>
+        <label for="bmsg">مختصر تفصیل (اختیاری)</label>
+        <textarea id="bmsg" rows="3" placeholder="اپنا مسئلہ مختصراً لکھیں"></textarea>
+      </div>
+      <button type="submit">بکنگ کی درخواست بھیجیں</button>
+      <p class="form-note" id="formNote">درخواست بھیجنے کے بعد ہماری ٹیم آپ سے فون یا واٹس ایپ پر رابطہ کرے گی۔</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="brand latin">شاہدزادہ اسلامک پورٹل</div>
+  <div class="foot-links">
+    <a href="#deeds">اعمال</a>
+    <a href="#asma">اسماء الحسنیٰ</a>
+    <a href="#rabbana">۴۰ ربنا</a>
+    <a href="#history">تاریخ</a>
+    <a href="#consult">مشاورت</a>
+    <a href="tel:03448144167" style="direction:ltr; unicode-bidi:bidi-override; display:inline-block;">0344 8144167</a>
+  </div>
+  <div class="copyright">© 2026 Shahidzada Islamic Portal — جزاک اللہ خیراً</div>
+</footer>
+
+<script>
+// ---- Asma ul Husna data (99 names) ----
+const asma = [
+["اللّٰه","Allah"],["الرَّحْمٰن","نہایت رحم کرنے والا"],["الرَّحِيْم","بہت مہربان"],["الْمَلِك","بادشاہ"],
+["الْقُدُّوْس","پاک ذات"],["السَّلاَم","سلامتی دینے والا"],["الْمُؤْمِن","امن دینے والا"],["الْمُهَيْمِن","نگہبان"],
+["الْعَزِيْز","غالب"],["الْجَبَّار","زبردست"],["الْمُتَكَبِّر","بڑائی والا"],["الْخَالِق","پیدا کرنے والا"],
+["الْبَارِئ","بنانے والا"],["الْمُصَوِّر","صورت گر"],["الْغَفَّار","بہت بخشنے والا"],["الْقَهَّار","غالب"],
+["الْوَهَّاب","بہت عطا کرنے والا"],["الرَّزَّاق","رزق دینے والا"],["الْفَتَّاح","فیصلہ کرنے والا"],["اَلْعَلِيْم","سب کچھ جاننے والا"],
+["الْقَابِض","تنگ کرنے والا"],["الْبَاسِط","کشادگی دینے والا"],["الْخَافِض","پست کرنے والا"],["الرَّافِع","بلند کرنے والا"],
+["الْمُعِزّ","عزت دینے والا"],["المُذِلّ","ذلت دینے والا"],["السَّمِيْع","سننے والا"],["الْبَصِيْر","دیکھنے والا"],
+["الْحَكَم","فیصلہ کرنے والا"],["الْعَدْل","انصاف کرنے والا"],["اللَّطِيْف","باریک بین"],["الْخَبِيْر","باخبر"],
+["الْحَلِيْم","بردبار"],["الْعَظِيْم","عظمت والا"],["الْغَفُوْر","بخشنے والا"],["الشَّكُوْر","قدر کرنے والا"],
+["الْعَلِيّ","بلند مرتبہ"],["الْكَبِيْر","بڑائی والا"],["الْحَفِيْظ","حفاظت کرنے والا"],["المُقِيت","روزی پہنچانے والا"],
+["الْحسِيْب","حساب لینے والا"],["الْجَلِيْل","بزرگی والا"],["الْكَرِيْم","کرم کرنے والا"],["الرَّقِيْب","نگہبان"],
+["الْمُجِيْب","قبول کرنے والا"],["الْوَاسِع","وسعت والا"],["الْحَكِيْم","حکمت والا"],["الْوَدُوْد","محبت کرنے والا"],
+["الْمَجِيْد","بزرگی والا"],["الْبَاعِث","اٹھانے والا"],["الشَّهِيْد","گواہ"],["الْحَقّ","سچا"],
+["الْوَكِيْل","کارساز"],["الْقَوِيّ","طاقتور"],["الْمَتِيْن","مضبوط"],["الْوَلِيّ","دوست"],
+["الْحَمِيْد","تعریف کے لائق"],["الْمُحْصِي","شمار کرنے والا"],["الْمُبْدِئ","ابتدا کرنے والا"],["الْمُعِيْد","دوبارہ پیدا کرنے والا"],
+["الْمُحْيِي","زندگی دینے والا"],["اَلْمُمِيت","موت دینے والا"],["الْحَيّ","زندہ"],["الْقَيُّوْم","قائم رہنے والا"],
+["الْوَاجِد","پانے والا"],["الْمَاجِد","بزرگی والا"],["الْوَاحِد","اکیلا"],["اَلاَحَد","یکتا"],
+["الصَّمَد","بے نیاز"],["الْقَادِر","قدرت والا"],["الْمُقْتَدِر","قدرت رکھنے والا"],["الْمُقَدِّم","آگے کرنے والا"],
+["الْمُؤَخِّر","پیچھے کرنے والا"],["الأوَّل","سب سے پہلا"],["الآخِر","سب سے آخر"],["الظَّاهِر","ظاہر"],
+["الْبَاطِن","پوشیدہ"],["الْوَالِي","حاکم"],["الْمُتَعَالِي","بلند و بالا"],["الْبَرّ","نیکی کرنے والا"],
+["التَّوَّاب","توبہ قبول کرنے والا"],["الْمُنْتَقِم","بدلہ لینے والا"],["العَفُوّ","معاف کرنے والا"],["الرَّؤُوْف","شفقت کرنے والا"],
+["مَالِكُ الْمُلْك","ملک کا مالک"],["ذُوالْجَلاَلِ وَالإكْرَام","جلال و اکرام والا"],["الْمُقْسِط","انصاف کرنے والا"],["الْجَامِع","جمع کرنے والا"],
+["الْغَنِيّ","بے نیاز"],["الْمُغْنِي","غنی کرنے والا"],["الْمَانِع","روکنے والا"],["الضَّار","نقصان پہنچانے والا"],
+["النَّافِع","نفع دینے والا"],["النُّوْر","نور"],["الْهَادِي","ہدایت دینے والا"],["الْبَدِيْع","انوکھا"],
+["البَاقِي","ہمیشہ رہنے والا"],["الْوَارِث","وارث"],["الرَّشِيْد","راہ دکھانے والا"],["الصَّبُوْر","صبر کرنے والا"]
+];
+
+const asmaGrid = document.getElementById('asmaGrid');
+let asmaExpanded = false;
+function renderAsma(){
+  asmaGrid.innerHTML = '';
+  const count = asmaExpanded ? asma.length : 12;
+  asma.slice(0,count).forEach(([ar,ur])=>{
+    const div = document.createElement('div');
+    div.className = 'asma-card';
+    div.innerHTML = `<div class="ar">${ar}</div><div class="ur">${ur}</div>`;
+    asmaGrid.appendChild(div);
+  });
+}
+renderAsma();
+document.getElementById('asmaToggle').addEventListener('click', ()=>{
+  asmaExpanded = !asmaExpanded;
+  renderAsma();
+  document.getElementById('asmaToggle').textContent = asmaExpanded ? 'کم نام دیکھیں' : 'مزید نام دیکھیں';
+});
+
+// ---- Prophet ﷺ names ----
+const prophetNames = ["محمد ﷺ","أحمد","الماحي","الحاشر","العاقب","المقفّى","رسول الرحمة","نبي التوبة","نبي الملحمة","الفاتح","الخاتم","الشاهد","المبشر","النذير","السراج المنیر","الأمین","الصادق","المصطفی","المجتبیٰ","رحمۃ للعالمین"];
+const pWrap = document.getElementById('prophetNames');
+prophetNames.forEach(n=>{
+  const a = document.createElement('span');
+  a.className = 'pill';
+  a.textContent = n;
+  pWrap.appendChild(a);
+});
+
+// ---- 40 Rabbana ----
+const rabbana = [
+["رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ","اے ہمارے رب! ہم سے قبول فرما، بے شک تو ہی سننے والا جاننے والا ہے۔"],
+["رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ","اے ہمارے رب! ہمیں دنیا میں بھلائی دے اور آخرت میں بھی بھلائی دے، اور ہمیں آگ کے عذاب سے بچا۔"],
+["رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا","اے ہمارے رب! اگر ہم بھول جائیں یا خطا کریں تو ہمیں نہ پکڑ۔"],
+["رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا","اے ہمارے رب! ہمارے گناہ اور ہمارے معاملات میں زیادتی معاف فرما۔"],
+["رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ","اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما۔"],
+["رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا","اے ہمارے رب! ہم پر صبر کا فیضان کر اور ہمارے قدم جما دے۔"],
+["رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي","اے میرے رب! میرا سینہ کھول دے اور میرا کام آسان فرما۔"],
+["رَبِّ زِدْنِي عِلْمًا","اے میرے رب! میرے علم میں اضافہ فرما۔"],
+["رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا","اے ہمارے رب! ہمیں ہدایت دینے کے بعد ہمارے دل ٹیڑھے نہ کر۔"],
+["رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي","اے میرے رب! مجھے اور میری اولاد کو نماز قائم کرنے والا بنا۔"],
+["رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ","اے ہمارے رب! مجھے، میرے والدین کو اور تمام مومنوں کو بخش دے۔"],
+["رَبِّ اغْفِرْ وَارْحَمْ وَأَنتَ خَيْرُ الرَّاحِمِينَ","اے میرے رب! بخش دے اور رحم فرما، تو سب سے بہتر رحم کرنے والا ہے۔"],
+["رَبَّنَا آمَنَّا فَاكْتُبْنَا مَعَ الشَّاهِدِينَ","اے ہمارے رب! ہم ایمان لائے، ہمیں گواہی دینے والوں میں لکھ لے۔"],
+["رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِينَ كَفَرُوا","اے ہمارے رب! ہمیں کافروں کے لیے آزمائش نہ بنا۔"],
+["رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ","اے ہمارے رب! ہم سے جہنم کا عذاب دور فرما۔"],
+["رَبِّ هَبْ لِي حُكْمًا وَأَلْحِقْنِي بِالصَّالِحِينَ","اے میرے رب! مجھے حکمت عطا فرما اور نیک لوگوں میں شامل فرما۔"],
+["رَبَّنَا وَآتِنَا مَا وَعَدتَّنَا عَلَىٰ رُسُلِكَ","اے ہمارے رب! جو وعدہ تو نے اپنے رسولوں کے ذریعے کیا، وہ ہمیں عطا فرما۔"],
+["رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ","اے میرے رب! مجھے توفیق دے کہ میں تیری نعمت کا شکر ادا کروں۔"],
+["رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا","اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اگر تو نے ہمیں معاف نہ کیا تو ہم نقصان اٹھانے والوں میں ہوں گے۔"],
+["رَبَّنَا لَا تَجْعَلْنَا مَعَ الْقَوْمِ الظَّالِمِينَ","اے ہمارے رب! ہمیں ظالم قوم کے ساتھ شامل نہ کر۔"],
+["رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ","اے میرے رب! تو جو بھلائی مجھ پر نازل کرے میں اس کا محتاج ہوں۔"],
+["رَبَّنَا أَتْمِمْ لَنَا نُورَنَا وَاغْفِرْ لَنَا","اے ہمارے رب! ہمارا نور مکمل فرما اور ہمیں بخش دے۔"],
+["رَبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ","اے میرے رب! مجھے سچائی کے ساتھ داخل کر اور سچائی کے ساتھ نکال۔"],
+["رَبَّنَا لَا تُزِغْ قُلُوبَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً","اے ہمارے رب! ہمارے دل ٹیڑھے نہ کر اور اپنی طرف سے رحمت عطا فرما۔"],
+["رَبِّ اجْعَلْ هَـٰذَا بَلَدًا آمِنًا","اے میرے رب! اس شہر کو امن والا بنا۔"],
+["رَبَّنَا إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِي لِلْإِيمَانِ","اے ہمارے رب! ہم نے ایک پکارنے والے کو سنا جو ایمان کی طرف بلاتا تھا۔"],
+["رَبِّ نَجِّنِي وَأَهْلِي مِمَّا يَعْمَلُونَ","اے میرے رب! مجھے اور میرے گھر والوں کو ان کے اعمال سے بچا۔"],
+["رَبِّ انصُرْنِي عَلَى الْقَوْمِ الْمُفْسِدِينَ","اے میرے رب! مجھے فساد کرنے والی قوم کے خلاف مدد فرما۔"],
+["رَبِّ إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ","اے میرے رب! مجھے تکلیف پہنچی ہے اور تو سب سے بڑھ کر رحم کرنے والا ہے۔"],
+["رَبَّنَا آتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا","اے ہمارے رب! اپنی طرف سے رحمت عطا فرما اور ہمارے معاملے میں ہدایت کی راہ آسان فرما۔"],
+["رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ","اے میرے رب! مجھے اکیلا نہ چھوڑ، اور تو سب سے بہتر وارث ہے۔"],
+["رَبَّنَا آمَنَّا بِمَا أَنزَلْتَ وَاتَّبَعْنَا الرَّسُولَ","اے ہمارے رب! ہم اس پر ایمان لائے جو تو نے نازل فرمایا اور رسول کی پیروی کی۔"],
+["رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً","اے میرے رب! اپنی طرف سے مجھے پاکیزہ اولاد عطا فرما۔"],
+["رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا","اے ہمارے رب! ہم پر بھاری بوجھ نہ ڈال۔"],
+["رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ","اے ہمارے رب! ہم پر وہ بوجھ نہ ڈال جس کی ہمیں طاقت نہ ہو۔"],
+["رَبَّنَا وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا","اے ہمارے رب! ہمیں معاف فرما، بخش دے اور رحم فرما۔"],
+["رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا","اے میرے رب! ان دونوں پر رحم فرما جیسے انہوں نے بچپن میں میری پرورش کی۔"],
+["رَبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ","اے میرے رب! میں شیطانوں کے وسوسوں سے تیری پناہ مانگتا ہوں۔"],
+["رَبَّنَا اكْشِفْ عَنَّا الْعَذَابَ إِنَّا مُؤْمِنُونَ","اے ہمارے رب! ہم سے عذاب دور فرما، بے شک ہم ایمان لاتے ہیں۔"],
+["رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَن دَخَلَ بَيْتِيَ مُؤْمِنًا","اے میرے رب! مجھے، میرے والدین کو اور جو میرے گھر میں مومن ہو کر داخل ہو، سب کو بخش دے۔"]
+];
+const rWrap = document.getElementById('rabbanaList');
+rabbana.forEach(([ar,ur],i)=>{
+  const item = document.createElement('div');
+  item.className = 'rabbana-item';
+  item.innerHTML = `
+    <div class="rabbana-q"><span><span class="num latin">${i+1}.</span>ربنا دعا نمبر ${i+1}</span><span class="chevron">⌄</span></div>
+    <div class="rabbana-a"><div class="arabic">${ar}</div><div class="ur">${ur}</div></div>`;
+  item.querySelector('.rabbana-q').addEventListener('click', ()=> item.classList.toggle('open'));
+  rWrap.appendChild(item);
+});
+
+// ---- Motivation quotes ----
+const quotes = [
+["اللہ پر بھروسہ کرو، اور اپنا کام بھی کرتے رہو — توکل کا مطلب کوشش چھوڑنا نہیں۔","شاہدزادہ"],
+["جو رات اللہ کے ساتھ گزرتی ہے، اس کا دن کبھی بے سکون نہیں رہتا۔","اسلامی حکمت"],
+["نیت درست ہو تو چھوٹا عمل بھی بڑا اجر بن جاتا ہے۔","حدیثِ نبوی ﷺ کے مفہوم سے"],
+["صبر تلخ ہے، مگر اس کا پھل ہمیشہ میٹھا ہوتا ہے۔","شاہدزادہ"],
+["دنیا کی محنت آخرت کی فکر کے ساتھ ہو تو وہی اصل کامیابی ہے۔","شاہدزادہ"],
+["دعا وہ ہتھیار ہے جو کبھی ناکام نہیں ہوتا، بس وقت اللہ کے ہاتھ میں ہے۔","اسلامی حکمت"]
+];
+const qWrap = document.getElementById('quoteStrip');
+quotes.forEach(([q,by])=>{
+  const card = document.createElement('div');
+  card.className = 'quote-card';
+  card.innerHTML = `<div class="mark">"</div><p>${q}</p><div class="by latin">— ${by}</div>`;
+  qWrap.appendChild(card);
+});
+
+// ---- Booking form ----
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('bname').value;
+  const phone = document.getElementById('bphone').value;
+  const topic = document.getElementById('btopic').value;
+  const msg = document.getElementById('bmsg').value;
+  const text = `السلام علیکم شاہدزادہ صاحب،%0Aنام: ${name}%0Aموبائل: ${phone}%0Aموضوع: ${topic}%0Aتفصیل: ${msg || 'N/A'}%0A%0Aبراہِ کرم مشاورت بک کریں۔`;
+  document.getElementById('formNote').textContent = 'آپ کی درخواست تیار ہے — واٹس ایپ کھل رہا ہے، براہِ کرم بھیجیں۔';
+  window.open(`https://wa.me/923448144167?text=${text}`, '_blank');
+});
+</script>
+</body>
+</html>
